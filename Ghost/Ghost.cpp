@@ -35,6 +35,10 @@ String Ghost::getTimeString(bool useMilitary) {
     if (useMilitary) {
         timeString = currentTime.Hour;
     }
+    else if (currentTime.Hour == 0)
+    {
+        timeString = 12;
+    }
     else {
         timeString = currentTime.Hour <= 12 ? currentTime.Hour : currentTime.Hour - 12;
     }
